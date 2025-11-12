@@ -6,7 +6,11 @@ using namespace std;
 
 int main()
 {
-    cout << "prac1";
+    string name ;
 
+    cout << "please enter:";
+    cin >> name ;
+
+    system("pause");
     return 0;
 }
