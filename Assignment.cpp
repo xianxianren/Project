@@ -66,20 +66,17 @@ public:
 int main() {
     // Setup: Creating the account
     cout << "Welcome to the Secure ATM System" << endl;
-    BankAccount myAccount("John Doe", 5000.00, 1234);
+    BankAccount myAccount("Joon Han", 5000.00, 1234);
     
     myAccount.showInfo();
 
-    // SCENARIO 1: Attempting to 'hack' the data directly
-    // myAccount.balance = 1000000; // COMPILER ERROR! (This proves Encapsulation works)
-
-    // SCENARIO 2: Failed attempt (Wrong PIN)
+    // SCENARIO 1: Failed attempt (Wrong PIN)
     myAccount.withdraw(200, 9999);
 
-    // SCENARIO 3: Failed attempt (Not enough money)
+    // SCENARIO 2: Failed attempt (Not enough money)
     myAccount.withdraw(6000, 1234);
 
-    // SCENARIO 4: Successful attempt
+    // SCENARIO 3: Successful attempt
     myAccount.withdraw(500, 1234);
 
     system("pause");
