@@ -60,7 +60,7 @@ int main() {
     myAccount.showInfo();
 
     // SCENARIO 1: Attempting to 'hack' the data directly
-    myAccount.balance = 1000000; // ERROR! (This proves Encapsulation works)
+    // myAccount.balance = 1000000; // ERROR! (This proves Encapsulation works)
 
     // SCENARIO 1: Failed attempt (Wrong PIN)
     myAccount.withdraw(200, 9999);
