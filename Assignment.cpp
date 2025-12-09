@@ -62,13 +62,13 @@ int main() {
     // SCENARIO 1: Attempting to 'hack' the data directly
     // myAccount.balance = 1000000; // ERROR! (This proves Encapsulation works)
 
-    // SCENARIO 1: Failed attempt (Wrong PIN)
+    // SCENARIO 2: Failed attempt (Wrong PIN)
     myAccount.withdraw(200, 9999);
 
-    // SCENARIO 2: Failed attempt (Not enough money)
+    // SCENARIO 3: Failed attempt (Not enough money)
     myAccount.withdraw(6000, 1234);
 
-    // SCENARIO 3: Successful attempt
+    // SCENARIO 4: Successful attempt
     myAccount.withdraw(500, 1234);
 
     system("pause");
