@@ -4,30 +4,29 @@
 using namespace std;
 
 class BankAccount {
-    // === ENCAPSULATION ===
-    // Data is PRIVATE. No one outside this class can touch it.
+    // ENCAPSULATION
+    // Data is Private. No one outside this class can touch it.
 private:
     double balance;
     int pinCode;
     string ownerName;
 
 public:
-    // Constructor to initialize the object
     BankAccount(string name, double initialBalance, int pin) {
         ownerName = name;
         balance = initialBalance;
         pinCode = pin;
     }
 
-    // === ABSTRACTION ===
+    // ABSTRACTION
     // The user calls this simple method, but internally it handles
-    // complex decisions (Security -> Validation -> Execution).
     void withdraw(double amount, int enteredPin) {
         cout << "\n--- Attempting to withdraw $" << amount << " ---" << endl;
 
         // Step 1: Security Check (Decision 1)
         if (enteredPin != pinCode) {
-            cout << "ERROR: Invalid PIN. Transaction rejected." << endl;
+            cout << "ERROR: Invalid PIN. " << endl;
+            cout << "Transaction rejected." << endl;
             return;
         }
 
@@ -39,22 +38,12 @@ public:
 
         // Step 3: Business Logic / Funds Check (Decision 3)
         if (amount > balance) {
-            cout << "ERROR: Insufficient funds. Current Balance: $" << balance << endl;
+            cout << "ERROR: Insufficient funds. " << endl;
+            cout << "Current Balance: RM" << balance << endl;
         } else {
-            // If all checks pass, we modify the private data
             balance = balance - amount;
             cout << "SUCCESS: Please take your cash." << endl;
-            cout << "New Balance: $" << balance << endl;
-        }
-    }
-
-    // Getter for balance (Read-only access)
-    double getBalance(int enteredPin) {
-        if (enteredPin == pinCode) {
-            return balance;
-        } else {
-            cout << "Access Denied." << endl;
-            return -1;
+            cout << "New Balance: RM" << balance << endl;
         }
     }
     
@@ -69,6 +58,9 @@ int main() {
     BankAccount myAccount("Joon Han", 5000.00, 1234);
     
     myAccount.showInfo();
+
+    // SCENARIO 1: Attempting to 'hack' the data directly
+    myAccount.balance = 1000000; // ERROR! (This proves Encapsulation works)
 
     // SCENARIO 1: Failed attempt (Wrong PIN)
     myAccount.withdraw(200, 9999);
