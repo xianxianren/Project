@@ -6,10 +6,10 @@ using namespace std;
 
 int main()
 {
-    string name ;
+    string hi ;
 
-    cout << "please enter:";
-    cin >> name ;
+    cout << "please E11111111111nter:";
+    cin >> hi ;
 
     system("pause");
 }
