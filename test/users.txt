@@ -1,0 +1,5 @@
+Admin;admin@test.com;000;123;0;;
+END_USER
+123;123;123;123;1;123;123
+TICKET;1000;Avengers: Secret Wars;Today;10:00 AM;Standard;20;Cancelled;A1
+END_USER
