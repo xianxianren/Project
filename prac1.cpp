@@ -12,5 +12,4 @@ int main()
     cin >> name ;
 
     system("pause");
-    return 0;
 }
